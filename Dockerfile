@@ -80,6 +80,8 @@ ENV SWIFT_BACKTRACE=enable=yes,sanitize=yes,threads=all,images=all,interactive=n
 # Ensure all further commands run as the vapor user
 USER vapor:vapor
 
+RUN mkdir /app/data && chown -R vapor:vapor /app/data
+
 # Let Docker bind to port 8080
 EXPOSE 8080
 

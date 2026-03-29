@@ -37,7 +37,7 @@ public func configure(_ app: Application) async throws {
 	if app.environment == .testing {
 		app.databases.use(.sqlite(.memory), as: .sqlite)
 	} else {
-		app.databases.use(.sqlite(.file("db.sqlite")), as: .sqlite)
+		app.databases.use(.sqlite(.file("./data/db.sqlite")), as: .sqlite)
 	}
 
 	app.migrations.add(CreateReference())
