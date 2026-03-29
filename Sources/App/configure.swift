@@ -12,12 +12,12 @@ public func configure(_ app: Application) async throws {
 	
 	// TODO: read from config
 	app.namingTheme = NamingTheme(
-		activityName: "TOTA at  ",
+		activityName: "TOTA at EH23",
 		adifSIG: "TOTA",
 		referenceSlug: "t",
 		referenceSingular: "Toilet",
 		referencePlural: "Toilets",
-		activityHostname: "39c3.totawatch.de")
+		activityHostname: "eh23.totawatch.de")
 
 
 	if app.environment == .testing {
@@ -52,7 +52,7 @@ public func configure(_ app: Application) async throws {
 #if DEBUG
 	app.migrations.add(SeedSampleData())
 #else
-	app.migrations.add(Seed39C3Data())
+	app.migrations.add(SeedEH23Data())
 #endif
 
 	// Session handling
@@ -141,15 +141,27 @@ func configureAwards(_ app: Application) async throws {
 	app.awardCheckers.append(AwardCheckerActivatedAllMultiBand(bandCount: 3, title: "WC: Wideband Completionist"))
 
 	// 39C3 specific:
-	app.awardCheckers.append(AwardCheckerBasementConnection())
-	app.awardCheckers.append(AwardCheckerInHouseDX())
-	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 9))
+// 	app.awardCheckers.append(AwardCheckerBasementConnection())
+// 	app.awardCheckers.append(AwardCheckerInHouseDX())
+// 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 9))
+// 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 0))
+// 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 1))
+// 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 2))
+// 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 3))
+// 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 4))
+// 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 9))
+// 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 0))
+// 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 1))
+// 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 2))
+// 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 3))
+// 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 4))
+
+	// EH23 specific
 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 0))
 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 1))
 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 2))
 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 3))
 	app.awardCheckers.append(AwardCheckerActivatedLevel(level: 4))
-	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 9))
 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 0))
 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 1))
 	app.awardCheckers.append(AwardCheckerHuntedLevel(level: 2))

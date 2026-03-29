@@ -105,7 +105,7 @@
       const ctx = document.getElementById('qsosGraph');
       let style = window.window.getComputedStyle(ctx);
       let bodyColor = style.getPropertyValue('--bs-body-color');
-      let lineColor = style.getPropertyValue('--bs-emphasis-color');
+      let lineColor = style.getPropertyValue('--color-primary');
       Chart.defaults.color = bodyColor;
       Chart.defaults.borderColor = bodyColor;
       new Chart(ctx, {
