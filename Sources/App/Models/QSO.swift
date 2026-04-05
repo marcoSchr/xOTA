@@ -12,6 +12,7 @@ final class QSO: Model, Content, @unchecked Sendable {
 		case CONTESTI
 		case CW
 		case DIGITALVOICE
+		case DMR
 		case DOMINO
 		case DYNAMIC
 		case FAX
@@ -25,6 +26,7 @@ final class QSO: Model, Content, @unchecked Sendable {
 		case JT9
 		case JT44
 		case JT65
+		case M17
 		case MFSK
 		case MSK144
 		case MT63
